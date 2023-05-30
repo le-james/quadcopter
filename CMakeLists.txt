@@ -17,9 +17,11 @@ add_executable(${PROJECT_NAME} Quadcopter_FC.cpp)
 # libraries linked to the mpu6050_lib too
 # links the libraries to main executable
 target_link_libraries(${PROJECT_NAME} pico_stdlib hardware_adc)
+
 # libraries that mpu6050_lib.hpp uses
 target_link_libraries(${PROJECT_NAME} hardware_i2c hardware_timer)
-# library that 
+
+# library that pwm_lib.hpp uses
 target_link_libraries(${PROJECT_NAME} hardware_pwm)
 
 pico_enable_stdio_usb(${PROJECT_NAME} 1)
